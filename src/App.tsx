@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar"
 import TechnologiesSection from "./components/TechnologiesSection"
 import type { Technology } from "./Types/Types";
 import { toast } from "react-toastify";
+import Footer from "./components/Footer";
 
 
 
@@ -87,6 +88,7 @@ const App = () => {
           onRemoveAll={handleRemoveAll}
         />
       </main>
+      <Footer/>
     </div>
   )
 }
