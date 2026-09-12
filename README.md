@@ -40,7 +40,7 @@ disables that card's button, and prevents duplicate adds with a warning
 toast. A selected card gets a highlighted pink border and its button
 switches to a light pink "✓ Added to Stack" state, so the selection is
 visible at a glance. Items can be removed individually or all at once, each
-action confirmed with a toast notification.
+action confirmed with a toast notification. 
 
 ![Your Stack panel](./docs/screenshots/your-stack-panel.png)
 
