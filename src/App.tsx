@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import Hero from "./components/Hero"
-import NavBar from "./components/NavBar"
-import TechnologiesSection from "./components/TechnologiesSection"
-import type { Technology } from "./Types/Types";
-import { toast } from "react-toastify";
-import Footer from "./components/Footer";
+import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
+import Hero from './components/Hero';
+import TechnologiesSection from './components/TechnologiesSection';
+import Footer from './components/Footer';
+import Navbar from './components/NavBar';
+import type { Technology } from './Types/Types';
 
-const App = () => {
 
-
+function App() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -73,11 +73,12 @@ const App = () => {
     setStack([]);
     toast.info('Your stack has been cleared.');
   }
+
   return (
     <div className="min-h-screen bg-white">
-      <NavBar/>
+      <Navbar />
       <main>
-        <Hero/>
+        <Hero />
         <TechnologiesSection
           technologies={technologies}
           isLoading={isLoading}
@@ -88,9 +89,10 @@ const App = () => {
           onRemoveAll={handleRemoveAll}
         />
       </main>
-      <Footer/>
+      <Footer />
+      <ToastContainer position="bottom-right" autoClose={2500} theme="light" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

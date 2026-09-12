@@ -1,7 +1,7 @@
 import bannerStack from '../assets/banner-stack.png'
 import { FOCUS_RING, GRADIENT_BG, GRADIENT_TEXT } from '../Theme/Theme'
 
-const Hero = () => {
+export default function Hero() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8 lg:py-28">
       <div>
@@ -38,7 +38,5 @@ const Hero = () => {
         />
       </div>
     </section>
-  )
+  );
 }
-
-export default Hero
