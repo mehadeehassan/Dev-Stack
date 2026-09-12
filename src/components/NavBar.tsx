@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FOCUS_RING, GRADIENT_BG, GRADIENT_TEXT } from "../Theme/Theme";
 
 const NAV_LINKS = ['Home', 'Technologies', 'Projects', 'About', 'Contact'] as const;
@@ -15,6 +16,8 @@ function Logo() {
 }
 
 const NavBar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState<string>('Home');
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur">

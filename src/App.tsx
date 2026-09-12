@@ -1,7 +1,9 @@
+import NavBar from "./components/NavBar"
+
 const App = () => {
   return (
-    <div>
-      <h1 className='bg-amber-600'>hello bangladesh</h1>
+    <div className="min-h-screen bg-white">
+      <NavBar/>
     </div>
   )
 }
