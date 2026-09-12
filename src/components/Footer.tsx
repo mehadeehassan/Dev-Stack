@@ -6,7 +6,12 @@ const LINK_GROUPS: { title: string; links: string[] }[] = [
   { title: 'Legal', links: ['Privacy Policy', 'Terms of Service'] },
 ];
 
-const SOCIALS = ['GitHub', 'Twitter', 'LinkedIn'] as const;
+// const SOCIALS = ['GitHub', 'Twitter', 'LinkedIn'] as const;
+const SOCIALS = [
+  { name: 'GitHub', url: 'https://github.com/mehadeehassan' },
+  { name: 'Twitter', url: 'https://x.com/mehedi_ahnaf' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mehadeehassan/' },
+] as const;
 
 export default function Footer() {
   return (
@@ -35,18 +40,20 @@ export default function Footer() {
             {/* Social Links */}
             <div className="mt-4 flex gap-4 text-sm font-medium text-gray-600 max-sm:justify-center max-sm:gap-0">
               {SOCIALS.map((social, index) => (
-                <div key={social} className="flex items-center">
+                <div key={social.name} className="flex items-center">
                   <a
-                    href="#"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`${FOCUS_RING} hover:text-gray-900`}
                   >
-                    {social}
+                    {social.name}
                   </a>
 
                   {index < SOCIALS.length - 1 && (
-                  <span className="hidden px-4 text-gray-500 max-sm:inline max-sm:px-5">
-                   •
-                  </span>
+                    <span className="hidden px-4 text-gray-500 max-sm:inline max-sm:px-5">
+                      •
+                    </span>
                   )}
                 </div>
               ))}
