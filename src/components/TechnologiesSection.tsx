@@ -1,5 +1,6 @@
 import { GRADIENT_TEXT } from "../Theme/Theme";
 import type { Technology } from "../Types/Types";
+import StackSidebar from "./StackSidebar";
 import TechCard from "./TechCard";
 
 
@@ -28,6 +29,8 @@ export default function TechnologiesSection({
   error,
   stack,
   onAdd,
+  onRemove,
+  onRemoveAll,
 }: TechnologiesSectionProps) {
   const stackIds = new Set(stack.map((item) => item.id));
 
@@ -48,6 +51,10 @@ export default function TechnologiesSection({
             {technologies.map((tech) => (
               <TechCard key={tech.id} tech={tech} isAdded={stackIds.has(tech.id)} onAdd={onAdd} />
             ))}
+          </div>
+
+          <div className="lg:col-span-1">
+            <StackSidebar stack={stack} onRemove={onRemove} onRemoveAll={onRemoveAll} />
           </div>
         </div>
       )}
